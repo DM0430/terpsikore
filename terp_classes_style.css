@@ -1,0 +1,140 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo img {
+    height: 85px; 
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li.active {
+    font-weight: bold;
+}
+
+/* ---------- HERO ---------- */
+.class-hero {
+    position: relative;
+    height: 300px;
+}
+
+.class-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.class-hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 65px;
+}
+
+/* ---------- FEATURED CLASS ---------- */
+.featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px;
+}
+
+.featured img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.featured-text {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ---------- CLASS OPTIONS ---------- */
+.class-options {
+    background: #e6e6e6;
+    padding: 50px 60px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.option {
+    text-align: center;
+}
+
+.option img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ---------- INFO SECTIONS ---------- */
+.info-sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 70px 60px;
+}
+
+.info small {
+    color: #666;
+}
+
+.info h4 {
+    margin: 10px 0;
+}
+
+.info p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: black;
+    color: #aaa;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    font-size: 14px;
+}
+
+footer h5 {
+    color: #00aaff;
+    margin-bottom: 15px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+
+/* ---------- LOGO IMAGE ---------- */
+nav .logo img {
+    height: 85px;
+    width: auto;
+    display: block;
+}

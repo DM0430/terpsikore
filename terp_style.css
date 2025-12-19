@@ -1,0 +1,184 @@
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- NAVIGATION ---------- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+nav ul li.active {
+    font-weight: bold;
+}
+
+/* ---------- MEMBERSHIP HERO ---------- */
+.membership-hero {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    padding: 60px;
+    gap: 40px;
+}
+
+.hero-image {
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #666;
+    height: 400px;
+}
+
+.membership-options {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.membership-options button {
+    padding: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background: #e0e0e0;
+    cursor: pointer;
+}
+
+.membership-options button.selected {
+    background: #000;
+    color: #fff;
+}
+
+
+/* ---------- SECTION HEADERS ---------- */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin: 80px 0 40px;
+}
+
+/* ---------- IMAGE GRID ---------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 0 60px 80px;
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.card h4 {
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 6px;
+}
+
+/* ---------- CTA BANNER ---------- */
+.cta {
+    background: #2946c6;
+    color: white;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cta h2 {
+    font-size: 36px;
+}
+
+.cta-buttons button {
+    padding: 14px 26px;
+    font-size: 14px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.cta-buttons .primary {
+    background: black;
+    color: white;
+}
+
+.cta-buttons .secondary {
+    background: #7cc6ff;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: black;
+    color: #aaa;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    font-size: 14px;
+}
+
+footer h5 {
+    color: #00aaff;
+    margin-bottom: 15px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+
+/* ---------- LOGO IMAGE ---------- */
+nav .logo img {
+    height: 85px;
+    width: auto;
+    display: block;
+}
+
+/* ---------- HERO IMAGE FIX ---------- */
+.hero-image {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ensure the hero image fills the container */
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
