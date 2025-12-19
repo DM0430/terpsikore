@@ -79,6 +79,15 @@ function loadSelectedMembership() {
     }
 }
 
+function loadSelectedMembershipIntoForm() {
+    const membershipInput = document.getElementById("membership");
+    const savedMembership = localStorage.getItem("selectedMembership");
+
+    if (membershipInput && savedMembership) {
+        membershipInput.value = savedMembership;
+    }
+}
+
 // Handle membership form submission
 function handleFormSubmit(event) {
     event.preventDefault();
@@ -134,7 +143,7 @@ membershipOptions.forEach(option => {
  * EVENT HANDLING
  *************************************************/
 document.addEventListener("DOMContentLoaded", () => {
-    loadSelectedMembership();
+    loadSelectedMembershipIntoForm();
     loadCalendar();
 
     const form = document.getElementById("membershipForm");
@@ -142,4 +151,5 @@ document.addEventListener("DOMContentLoaded", () => {
         form.addEventListener("submit", handleFormSubmit);
     }
 });
+
 
