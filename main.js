@@ -66,7 +66,7 @@ const interactiveClassSchedule = [
 function selectMembership(type) {
     selectedMembership = type;
     localStorage.setItem("selectedMembership", type);
-    window.location.href = "terp_reserve.html";
+    window.location.href = "terp_membership.html";
 }
 
 // Load selected membership on reserve page
@@ -142,3 +142,4 @@ document.addEventListener("DOMContentLoaded", () => {
         form.addEventListener("submit", handleFormSubmit);
     }
 });
+
