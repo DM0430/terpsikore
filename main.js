@@ -13,19 +13,60 @@ const membershipOptions = [
     "Class Pass / PPC"
 ];
 
+const interactiveClassSchedule = [
+    {
+        day: "Monday",
+        name: "Beginner Dance",
+        time: "6:00 PM",
+        level: "Beginner"
+    },
+    {
+        day: "Tuesday",
+        name: "Hip-Hop",
+        time: "7:00 PM",
+        level: "Intermediate"
+    },
+    {
+        day: "Wednesday",
+        name: "Strength & Movement",
+        time: "6:00 PM",
+        level: "All Levels"
+    },
+    {
+        day: "Thursday",
+        name: "Contemporary Dance",
+        time: "7:00 PM",
+        level: "Intermediate"
+    },
+    {
+        day: "Friday",
+        name: "Open Studio",
+        time: "5:00 PM",
+        level: "All Levels"
+    },
+    {
+        day: "Saturday",
+        name: "All Levels Dance",
+        time: "10:00 AM",
+        level: "All Levels"
+    },
+    {
+        day: "Sunday",
+        name: "Rest & Recovery",
+        time: "—",
+        level: "—"
+    }
+];
+
 /*************************************************
  * FUNCTIONS
  *************************************************/
 
-// Called when user selects a membership
+// Membership selection
 function selectMembership(type) {
     selectedMembership = type;
-
-    // Save to localStorage so other pages can access it
     localStorage.setItem("selectedMembership", type);
-
-    // Redirect to membership form
-    window.location.href = "terp_membership.html";
+    window.location.href = "terp_reserve.html";
 }
 
 // Load selected membership on reserve page
@@ -45,39 +86,56 @@ function handleFormSubmit(event) {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
 
-    // SELECTION STATEMENT (if/else)
     if (name === "" || email === "") {
         alert("Please complete all required fields.");
     } else {
         alert(
-            "Thank you, " +
-            name +
-            "! Your membership request for " +
-            localStorage.getItem("selectedMembership") +
-            " has been received."
+            `Thank you, ${name}! Your membership request for ${localStorage.getItem("selectedMembership")} has been received.`
         );
-
-        // Clear form
         event.target.reset();
         localStorage.removeItem("selectedMembership");
     }
 }
 
-/*************************************************
- * LOOPS
- *************************************************/
+// Interactive calendar loader
+function loadCalendar() {
+    const calendar = document.getElementById("calendar");
+    if (!calendar) return;
 
-// Loop through membership options (demonstration)
+    interactiveClassSchedule.forEach(item => {
+        const dayDiv = document.createElement("div");
+        dayDiv.classList.add("calendar-day");
+
+        dayDiv.innerHTML = `
+            <strong>${item.day}</strong>
+            <div class="calendar-details">
+                <p><strong>Class:</strong> ${item.name}</p>
+                <p><strong>Time:</strong> ${item.time}</p>
+                <p><strong>Level:</strong> ${item.level}</p>
+            </div>
+        `;
+
+        dayDiv.addEventListener("click", () => {
+            dayDiv.classList.toggle("active");
+        });
+
+        calendar.appendChild(dayDiv);
+    });
+}
+
+/*************************************************
+ * LOOPS (Demonstration)
+ *************************************************/
 membershipOptions.forEach(option => {
     console.log("Available membership:", option);
 });
 
 /*************************************************
- * EVENT HANDLING & DOM MANIPULATION
+ * EVENT HANDLING
  *************************************************/
-
 document.addEventListener("DOMContentLoaded", () => {
     loadSelectedMembership();
+    loadCalendar();
 
     const form = document.getElementById("membershipForm");
     if (form) {
